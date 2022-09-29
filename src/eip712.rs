@@ -33,7 +33,7 @@ lazy_static! {
 
 #[serde(rename_all = "camelCase")]
 #[serde(deny_unknown_fields)]
-#[derive(Deserialize, Serialize, Validate, Debug, Clone)]
+#[derive(PartialEq, Eq, Deserialize, Serialize, Validate, Debug, Clone)]
 pub struct EIP712Domain {
     pub name: String,
     pub version: String,
