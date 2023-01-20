@@ -36,7 +36,8 @@ lazy_static! {
 #[derive(PartialEq, Eq, Deserialize, Serialize, Validate, Debug, Clone)]
 pub struct EIP712Domain {
     pub name: String,
-    pub version: String,
+    /// Again, even though the spec says this is required, it is ocasionally not provided.
+    pub version: Option<String>,
     /// Although the specification says this is required, it is sometimes not provided.
     ///
     /// We make it optional.
